@@ -1,38 +1,495 @@
-.App {
-  text-align: center;
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Italiana", serif;
+  color: white;
+  font-size: 36px;
+  height: 100vh;
+  position: relative;
+  animation-name: initialRender;
+  animation-duration: 2s;
+  opacity: 1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes initialRender {
+  0% {
+    opacity: 0;
+    padding-top: 400px;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logoContainer {
+  position: relative;
+
+  border: 1px solid;
+  border-color: rgb(79, 79, 79);
+  animation: orbit 120s infinite linear;
+  font-size: 17px;
+  font-weight: bold;
+  background-color: rgb(87, 12, 12);
+
+  box-shadow: 0.5px 0.5px 0.5px 0.5px rgb(255, 255, 109);
+}
+.firstContainer {
+  width: 270px;
+  height: 270px;
+  text-align: center;
+  border-radius: 50%;
+  padding-top: 30px;
+  box-sizing: border-box;
+
+  background-color: black;
+}
+
+.logoContainer::before {
+  content: "HTML";
+  width: 30px;
+  color: rgb(241, 102, 102);
+  height: 30px;
+  border-radius: 50%;
+
+  background-color: rgb(200, 200, 200);
+  position: absolute;
+  font-size: 13px;
+  left: 60px;
+  top: 10px;
+  box-shadow: 1px 1px 20px yellow;
+}
+
+.logoContainer0::after {
+  content: "CSS";
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: rgb(241, 102, 102);
+  font-size: 13px;
+  background-color: rgb(200, 200, 200);
+  position: absolute;
+  left: 200px;
+  top: -5px;
+  box-shadow: 1px 1px 20px yellow;
+}
+
+.logoContainer2 {
+  transform: rotate(180deg);
+  animation-direction: reverse;
+  width: 420px;
+  height: 420px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.logoContainer3 {
+  transform: rotate(270deg);
+}
+
+.logoContainer2::before {
+  content: "React";
+
+  left: 45px;
+  top: 50px;
+
+  background-color: rgb(200, 200, 200);
+  box-shadow: 1px 1px 20px yellow;
+}
+
+.logoContainer2::after {
+  content: "Next";
+  color: rgb(241, 102, 102);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  left: 400px;
+  top: 130px;
+  font-size: 13px;
+  background-color: rgb(200, 200, 200);
+  box-shadow: 5px 5px 25px yellow;
+}
+
+.logoContainer3 {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.logoContainer3::before {
+  content: "Javascript";
+  left: 45px;
+  top: 70px;
+
+  background-color: rgb(200, 200, 200);
+  box-shadow: 1px 1px 20px yellow;
+}
+.logoContainer3::after {
+  content: "Typescript";
+  width: 20px;
+  height: 20px;
+  color: rgb(241, 102, 102);
+  font-size: 13px;
+  border-radius: 50%;
+  position: absolute;
+  left: 130px;
+  top: 470px;
+
+  background-color: rgb(200, 200, 200);
+  box-shadow: 5px 5px 25px yellow;
+}
+
+.mobileLogo {
+  display: none;
+}
+.mobileMenu {
+  display: none;
+}
+.azLogo {
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transition: all 1.5s;
+  z-index: 300;
+  transform: translate(-52%, -49%);
+}
+
+.azLogo h1 {
+  margin-top: -100px;
+  font-size: 160px;
+}
+.azLogo h2 {
+  color: brown;
+  font-size: 130px;
+}
+.azLogoHover {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  transition: all 2s;
+
+  left: 0;
+  top: 0;
+  background-color: black;
+}
+.navList,
+.navList li {
+  transition: all 1s;
+}
+
+.azLogo:hover .azLogoHover {
+  height: 100%;
+}
+.azLogo:hover .navList {
+  transform: translateX(20px);
+  transform: translateY(80px);
+}
+.azLogo:hover .navList li {
+  font-size: 25px;
+}
+
+.navList li {
+  position: relative;
+  font-size: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navList li a {
+  color: white !important;
+  text-decoration: none;
+}
+
+.navList li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 0%;
+  height: 3px;
+  background-color: rgb(241, 102, 102);
+  visibility: hidden;
+  transition: all 1s;
+}
+
+.navList li a:hover::before {
+  visibility: visible;
+  width: 60%;
+}
+
+.navList li:hover {
+  color: darkred;
+  transform: skewX(-20deg);
+}
+
+.drawerRight {
+  top: 250px;
+  right: 0%;
+  position: absolute;
+}
+
+.drawerRight h1 {
+  width: 100%;
+  font-size: 9vw;
+  color: rgb(32, 31, 31);
+  opacity: 1;
+}
+
+.drawerLeft ul li,
+.drawerLeft p,
+.drawerRight h1 {
+  animation: textContent;
+  animation-duration: 1.5s;
+}
+@keyframes textContent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.drawerLeft {
+  top: 20px;
+  left: 4%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: wheat;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  color: rgb(163, 64, 64);
+  font-weight: 600;
+  opacity: 1;
+  box-shadow: 0px 0px 30px 15px rgb(163, 64, 64);
+  width: 500px;
+  height: 500px;
 }
 
-.App-link {
-  color: #61dafb;
+.transGrLeft {
+  animation: openDrawer;
+  animation-duration: 2s;
+}
+.transGrRight {
+  animation: openDrawerRight;
+  animation-duration: 2s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.lionClass {
+  opacity: 0;
+  position: relative;
+
+  animation: lionApear;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+@keyframes lionApear {
+  0% {
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes openDrawerRight {
+  0% {
+    opacity: 0.2;
+    right: 40%;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+@keyframes openDrawer {
+  0% {
+    opacity: 0;
+
+    top: 50%;
+  }
+
+  100% {
+    opacity: 1;
+    left: 4%;
+    top: 20px;
+  }
+}
+@keyframes orbit {
+  0% {
+    transform: rotate(-360deg);
+  }
+}
+
+.about {
+  font-size: 270px;
+  color: black;
+  text-align: center;
+
+  transition: all 1.5s;
+  color: darkred;
+}
+
+@media (max-width: 699px) {
+  .app {
+    padding-top: 100px;
+  }
+
+  @keyframes openDrawer {
+    0% {
+      opacity: 0;
+      left: 20%;
+    }
+
+    100% {
+      opacity: 1;
+      left: 4%;
+    }
+  }
+
+  .mobile {
+    width: 470px;
+    height: 470px;
+
+    top: -5%;
+    background-color: black;
+    background-color: rgb(30, 28, 28);
+    box-shadow: 0px 0px 25px 1px rgb(163, 64, 64);
+  }
+  .mobile ul {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+  .mobile p {
+    margin-right: 40px;
+    margin-bottom: 30px;
+  }
+
+  .mobileLogo {
+    display: block;
+    opacity: 0.15;
+  }
+
+  .lionClass {
+    display: none;
+  }
+
+  .mobileMenu {
+    font-size: 15px;
+    color: rgb(180, 163, 163);
+    position: absolute;
+    top: 52%;
+    left: 44%;
+    display: block;
+
+    font-weight: 600;
+    z-index: 900;
+  }
+  .mobileMenu ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  @keyframes rotateLogo {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+  .drawerRight {
+    display: none;
+  }
+  .firstContainer {
+    width: 150px;
+    height: 150px;
+  }
+  .logoContainer2 {
+    width: 270px;
+    height: 270px;
+  }
+  .logoContainer3 {
+    width: 330px;
+    height: 330px;
+  }
+  .logoContainer::before {
+    left: 10px;
+    top: 25px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .logoContainer0::after {
+    left: 120px;
+    top: -5px;
+    width: 20px;
+    height: 20px;
+  }
+  .logoContainer2::before {
+    left: 0px;
+    top: 75px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .logoContainer2::after {
+    left: 100px;
+    top: 260px;
+    width: 20px;
+    height: 20px;
+  }
+  .logoContainer3::before {
+    width: 20px;
+    height: 20px;
+    left: 45px;
+    top: 30px;
+  }
+  .logoContainer3::after {
+    width: 20px;
+    height: 20px;
+
+    left: 200px;
+    top: 315px;
+  }
+  .azLogo {
+    left: 50%;
+    top: 55%;
+    display: none;
+  }
+  .azLogo h1 {
+    margin-top: -50px;
+    font-size: 80px;
+  }
+  .azLogo h2 {
+    color: brown;
+    font-size: 60px;
+  }
+  .azLogoHover {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    transition: all 2s;
+    left: 0;
+    top: 0px;
+    background-color: black;
+  }
+
+  .navList li {
+    position: relative;
+    font-size: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .azLogo:hover .navList li {
+    font-size: 10px;
   }
 }

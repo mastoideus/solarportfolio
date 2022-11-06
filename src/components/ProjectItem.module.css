@@ -1,0 +1,53 @@
+.projectImg {
+  animation: textContent1;
+  animation-duration: 1.5s;
+}
+@keyframes textContent1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+.actions {
+  animation: btnAnim;
+  animation-duration: 1.5s;
+}
+
+@keyframes btnAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.actions button {
+  background-color: brown;
+  outline: none;
+  border: none;
+  font-family: "Italiana", serif;
+  color: whitesmoke;
+  padding: 10px 0;
+  margin-left: 1px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.actions a {
+  color: wheat;
+  text-decoration: none;
+}
+
+.actions button:nth-child(1) {
+  padding-left: 100px;
+  background-image: linear-gradient(to left, rgb(87, 12, 12), rgb(141, 82, 82));
+}
+.actions button:nth-child(2) {
+  padding-right: 100px;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgb(246, 103, 103)
+  );
+}
