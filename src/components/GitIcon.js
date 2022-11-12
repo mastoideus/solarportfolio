@@ -10,7 +10,6 @@ const GitIcon = () => {
         <BsGithub
           style={{ color: "brown", fontSize: "30px", marginRight: "7px" }}
         />
-        <VscNotebook style={{ color: "brown", fontSize: "30px" }} />
       </a>
     </div>
   );

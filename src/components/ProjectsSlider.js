@@ -10,22 +10,24 @@ const PROJECTS_DATA = [
   {
     id: "p4",
     title: "Bugyman",
-    tools: ["MERN Stack", "Redux Toolkit", "RTK query"],
+    tools: ["MERN Stack", "Redux Toolkit", "RTK query", "Typescript"],
     img: bugymanImg,
     url: "https://bugyman.onrender.com/",
+    code: "https://github.com/mastoideus/bugyman",
   },
   {
     id: "p1",
     title: "IMDB Clone",
-    tools: ["HTML", "CSS", "Javascript", "React"],
+    tools: ["HTML", "CSS", "Javascript", "(React)"],
     img: imdbImg,
   },
   {
     id: "p2",
     title: "Bookstore",
-    tools: ["HTML", "Tailwind", "Next.js", "MongoDB", "Express"],
+    tools: ["Next.js", "MongoDB", "Express", "Tailwind"],
     img: bookstoreImg,
     url: "https://bookstore-nextjs.vercel.app/",
+    code: "https://github.com/mastoideus/bookstore-nextjs",
   },
   {
     id: "p3",
@@ -33,6 +35,7 @@ const PROJECTS_DATA = [
     tools: ["Unique Template using React.js"],
     img: mountSpidersImg,
     url: "https://flamboyant-wing-de40ea.netlify.app/",
+    code: "https://github.com/mastoideus/mount-spiders",
   },
 ];
 
@@ -80,6 +83,7 @@ const ProjectsSlider = () => {
               tools={project.tools}
               imageUrl={project.img}
               url={project.url}
+              code={project.code}
             />
           );
         })}

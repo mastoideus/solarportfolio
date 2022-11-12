@@ -21,7 +21,6 @@ const skills = [
 function App() {
   const [openProjectDrawers, setOpenProjectDrawers] = useState(false);
   const [logoClassInitial, setLogoClassInitial] = useState(false);
-  const [lionClass, setLionClass] = useState(false);
 
   const [clickedLink, setClickedLink] = useState("");
 
@@ -33,22 +32,12 @@ function App() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLogoClassInitial(true);
-    }, 5000);
+    }, 2000);
 
     return () => {
       clearTimeout(timeout);
     };
   }, []);
-
-  useEffect(() => {
-    const timeoutLion = setTimeout(() => {
-      setLionClass(true);
-    }, 3000);
-
-    return () => {
-      clearTimeout(timeoutLion);
-    };
-  });
 
   return (
     <React.Fragment>
@@ -68,11 +57,11 @@ function App() {
             }`}
           >
             {clickedLink === "about" && (
-              <p style={{ fontSize: "18px", maxWidth: "65%" }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua.
+              <p className="aboutText">
+                Hi, I am Anel Zubcevic and I'm a Frontend developer. Currently,
+                I'm working in React and Next.js using all the advantages of the
+                Library in building responsive, scalable, performance efficient
+                and user friendly Web apps.
               </p>
             )}
             {clickedLink === "skills" && (
@@ -83,7 +72,9 @@ function App() {
                 }}
               >
                 {skills.map((skill, index) => (
-                  <li key={index}>{skill}</li>
+                  <li className="skill" key={index}>
+                    {skill}
+                  </li>
                 ))}
               </ul>
             )}
@@ -99,22 +90,7 @@ function App() {
             {clickedLink === "projects" && <h1>Projects</h1>}
           </ProjectSideD>
         )}
-        <img
-          src={lionGif}
-          alt=""
-          width={200}
-          height={200}
-          style={{
-            position: "absolute",
-            top: "35%",
-            left: "43.5%",
-            zIndex: 200,
-            objectFit: "contain",
 
-            opacity: 0,
-          }}
-          className={lionClass && "lionClass"}
-        />
         <div
           style={{
             opacity: logoClassInitial ? 1 : 0,
@@ -132,16 +108,10 @@ function App() {
               }}
               className="navList"
             >
-              <li onClick={() => openDrawersHandler("about")}>
-                <a href="#">About</a>
-              </li>
-              <li onClick={() => openDrawersHandler("skills")}>
-                <a href="#">Skills</a>
-              </li>
+              <li onClick={() => openDrawersHandler("about")}>About</li>
+              <li onClick={() => openDrawersHandler("skills")}>Skills</li>
 
-              <li onClick={() => openDrawersHandler("projects")}>
-                <a href="#">Projects</a>
-              </li>
+              <li onClick={() => openDrawersHandler("projects")}>Projects</li>
             </ul>
           </div>
           <h2>A</h2>

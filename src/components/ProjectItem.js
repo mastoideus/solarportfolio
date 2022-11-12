@@ -27,7 +27,7 @@ export const ProjectItem = (props) => {
       </p>
       <div className={classes.actions}>
         <button style={{ width: "49%" }}>
-          <a href="#">Code</a>
+          <a href={props.code}>Code</a>
         </button>
 
         <button style={{ width: "49%" }}>

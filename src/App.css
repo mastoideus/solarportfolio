@@ -11,6 +11,19 @@
   animation-duration: 2s;
   opacity: 1;
 }
+.aboutText {
+  max-width: 65%;
+  font-size: 18px;
+}
+.skill {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 699px) {
+  .aboutText {
+    font-size: 17px;
+  }
+}
 
 @keyframes initialRender {
   0% {
@@ -197,13 +210,10 @@
   list-style: none;
   margin: 0;
   padding: 0;
-}
-.navList li a {
-  color: white !important;
-  text-decoration: none;
+  cursor: pointer;
 }
 
-.navList li a::before {
+.navList li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -215,13 +225,13 @@
   transition: all 1s;
 }
 
-.navList li a:hover::before {
+.navList li:hover::before {
   visibility: visible;
-  width: 60%;
+  width: 30%;
 }
 
 .navList li:hover {
-  color: darkred;
+  color: rgb(205, 32, 32);
   transform: skewX(-20deg);
 }
 
