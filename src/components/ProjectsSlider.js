@@ -8,18 +8,12 @@ import bugymanImg from "../assets/images/bugTrackerImg.png";
 
 const PROJECTS_DATA = [
   {
-    id: "p4",
+    id: "p1",
     title: "Bugyman",
     tools: ["MERN Stack", "Redux Toolkit", "RTK query", "Typescript"],
     img: bugymanImg,
     url: "https://bugyman.onrender.com/",
     code: "https://github.com/mastoideus/bugyman",
-  },
-  {
-    id: "p1",
-    title: "IMDB Clone",
-    tools: ["HTML", "CSS", "Javascript", "(React)"],
-    img: imdbImg,
   },
   {
     id: "p2",
@@ -31,6 +25,15 @@ const PROJECTS_DATA = [
   },
   {
     id: "p3",
+    title: "IMDB Clone",
+    tools: ["React", "Tailwind", "(in progress)"],
+    img: imdbImg,
+    url: "https://imdb-clone-nqdd.onrender.com/",
+    code: "https://github.com/mastoideus/imdb",
+  },
+
+  {
+    id: "p4",
     title: "Mount Spiders",
     tools: ["Unique Template using React.js"],
     img: mountSpidersImg,
